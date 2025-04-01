@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AQI.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'aqi-backend-nu.vercel.app';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://aqi-backend-nu.vercel.app';
 
 function App() {
   const [city, setCity] = useState('');
@@ -20,6 +20,7 @@ function App() {
       setAqiData(null);
       const response = await axios.get(`${API_BASE_URL}/api/aqi?city=${city}`);
       setAqiData(response.data);
+      console.log(response)
     } catch (err) {
       console.error(err);
       setError('Could not fetch AQI data. Please try again.');
