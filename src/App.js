@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AQI.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://aqi-checker-xl.vercel.app';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'aqi-backend-nu.vercel.app';
 
 function App() {
   const [city, setCity] = useState('');
